@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         index: './src/index.js',
-        print: './src/print.js',
     },
 
     output: {
@@ -15,7 +14,8 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Knights Travail',
+            title: 'Battleship',
+            favicon: './src/assets/favicon.ico',
             template: 'src/index.html',
         }),
     ],
@@ -27,7 +27,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
                 type: 'asset/resource',
             },
             {
